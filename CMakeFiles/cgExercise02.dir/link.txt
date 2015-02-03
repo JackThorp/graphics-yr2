@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/cgExercise02.dir/main02.o CMakeFiles/cgExercise02.dir/inc/lodepng.o  -o cgExercise02 -rdynamic -lGL -lGLU -lGLEW -lglut -lpthread 

@@ -55,12 +55,13 @@ GLuint tex;
 // mouse controls
 /////////////////////////////////////////////////
 //scene interaction variables
-int mouse_old_x, mouse_old_y;
 int mouse_buttons = 0;
 float rotate_x = 0.0, rotate_y = 0.0;
 float move_x = 0.0, move_y = 0.0;
 unsigned int win_width = 128, win_height = 128;
 float translate_z = 0.0;
+float mouse_old_z = translate_z;
+int mouse_old_x = move_x, mouse_old_y = move_y;
 unsigned int frameCaptured = 0;
 /////////////////////////////////////////////////
 
@@ -82,7 +83,10 @@ void renderScene(void)
 
   glLightfv(GL_LIGHT0, GL_POSITION, lpos);
   /////////////////////////////////////////////////
-  //TODO add scene interaction code here
+  glTranslatef(move_x, move_y, translate_z);
+  glRotatef(rotate_x, 1.0, 0, 0);
+  glRotatef(rotate_y, 0, 1.0, 0);
+  
 
   /////////////////////////////////////////////////
   GL_CHECK(glUseProgram(p));
@@ -115,6 +119,12 @@ void mouseClick(int button, int state, int x, int y)
   // "state" of the mouse.
   /////////////////////////////////////////////////
 
+  if (state == GLUT_DOWN) {
+    mouse_old_x = x;
+    mouse_old_y = y;
+  } 
+
+  mouse_buttons = button;
 
   /////////////////////////////////////////////////
 }
@@ -124,9 +134,27 @@ void mouseMotion(int x, int y)
   /////////////////////////////////////////////////
   // TODO add code to handle mouse move events
   // and calculate reasonable values for object
-  // rotations
+  // rotationsDecimal floating point, lowercase
   /////////////////////////////////////////////////
+  
+  float x_diff = (float) x - mouse_old_x;
+  float y_diff = (float) y - mouse_old_y;
 
+  switch (mouse_buttons) {
+    case GLUT_RIGHT_BUTTON:
+      move_x += x_diff / (win_width / 2);
+      move_y += - (y_diff / (win_height / 2));
+      mouse_old_x = x;
+      mouse_old_y = y;
+      break;
+    case GLUT_MIDDLE_BUTTON:
+      translate_z += y_diff / (win_height / 2);
+      mouse_old_y = y; 
+      break;
+    case GLUT_LEFT_BUTTON:
+      rotate_x += y_diff  / (win_height/2);
+      rotate_y += x_diff / (win_width/2);
+  }
 
   /////////////////////////////////////////////////
 }

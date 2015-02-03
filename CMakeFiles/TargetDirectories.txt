@@ -1,0 +1,6 @@
+/homes/jt1712/3rdYear/graphics/cgcoursework2015/CMakeFiles/cgExercise01.dir
+/homes/jt1712/3rdYear/graphics/cgcoursework2015/CMakeFiles/cgExercise02.dir
+/homes/jt1712/3rdYear/graphics/cgcoursework2015/CMakeFiles/cgExercise03.dir
+/homes/jt1712/3rdYear/graphics/cgcoursework2015/CMakeFiles/cgExercise04a.dir
+/homes/jt1712/3rdYear/graphics/cgcoursework2015/CMakeFiles/cgExercise04b.dir
+/homes/jt1712/3rdYear/graphics/cgcoursework2015/CMakeFiles/cgExercise05.dir
