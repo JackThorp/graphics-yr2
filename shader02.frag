@@ -14,7 +14,7 @@ uniform int shader;
 
 in fragmentData
 {
-  vec3 pos;
+  vec3 vpos;
   vec3 normal;
   vec4 color;
 }frag;
@@ -28,11 +28,11 @@ void main()
 
   vec3 light_pos = vec3(gl_LightSource[0].position);
 
-  float d = distance(light_pos, frag.pos);
-  vec3  l = normalize(light_pos - frag.pos);
+  float d = distance(light_pos, frag.vpos);
+  vec3  l = normalize(light_pos - frag.vpos);
   vec3  n = frag.normal;
   vec3  r = reflect(-l, n);
-  vec3  e = normalize(vec3(0.0,0.0,0.0) - frag.pos);
+  vec3  e = normalize(vec3(0.0,0.0,0.0) - frag.vpos);
   
   // Per Pixel Phong Shading //////////////////////////////////////////////////
   if(shader == 2)
