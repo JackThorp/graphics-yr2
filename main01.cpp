@@ -341,22 +341,22 @@ void initialize()
 //main, setup and execution of environment
 int main(int argc, char **argv) {
 
-  glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-  glutInitWindowPosition(100, 100);
+  glutInit(&argc, argv);                                        // Initialise GLUT
+  glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);    // RGBA mode, double buffered window with depth buffer, 
+  glutInitWindowPosition(100, 100);                             // 
   glutInitWindowSize(320, 320);
   glutCreateWindow("Computer Graphics");
 
-  glutDisplayFunc(renderScene);
+  glutDisplayFunc(renderScene);               // set display callback for current window
   glutIdleFunc(renderScene);
-  glutReshapeFunc(changeSize);
-  glutKeyboardFunc(processNormalKeys);
+  glutReshapeFunc(changeSize);                // Triggered when window is reshaped.
+  glutKeyboardFunc(processNormalKeys);        // Triggered when keyboard is pressed on current window
 
-  glutMouseFunc(mouseClick);
-  glutMotionFunc(mouseMotion);
+  glutMouseFunc(mouseClick);                  // When user presses or releases mouse buttons
+  glutMotionFunc(mouseMotion);                // When user moves mouse
 
-  glEnable(GL_DEPTH_TEST);
-  glClearColor(0.0, 0.0, 0.0, 1.0);
+  glEnable(GL_DEPTH_TEST);            // enable various things, here enbles depth comparisons and depth buffer updating.
+  glClearColor(0.0, 0.0, 0.0, 1.0);   // specify color to use when clearing colour buffers.
 
   glewInit();
   if (GLEW_ARB_vertex_shader && GLEW_ARB_fragment_shader)

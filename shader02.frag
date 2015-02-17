@@ -23,7 +23,9 @@ in fragmentData
 
 void main()
 {
-  
+	
+  gl_FragColor = frag.color;
+
   vec3 light_pos = vec3(gl_LightSource[0].position);
 
   float d = distance(light_pos, frag.pos);
@@ -39,8 +41,12 @@ void main()
                       + gl_LightSource[0].linearAttenuation * d
                       + gl_LightSource[0].quadraticAttenuation * d * d);
 
-    vec4 diffuse_ref = attenuation * diffuseColor * dot(n, l);
-    vec4 specular_ref = attenuation * specularColor 
+    vec4 diffuse_ref  = attenuation 
+                      * diffuseColor 
+                      * dot(n, l);
+
+    vec4 specular_ref = attenuation 
+                      * specularColor 
                       * pow(max(0.0, dot(r, e)), 0.3*specularExponent);
     
     gl_FragColor = ambientColor + diffuse_ref + specular_ref;
