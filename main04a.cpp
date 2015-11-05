@@ -373,7 +373,7 @@ void initialize ()
 
 	glEnable(GL_TEXTURE_2D);
 	glActiveTexture(GL_TEXTURE0);
-	textureImage = readPPM("pebbles_texture.ppm");
+	textureImage = readPPM("new_texture.ppm");
 	glGenTextures(1, &tex);
 	glBindTexture(GL_TEXTURE_2D, tex);
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);

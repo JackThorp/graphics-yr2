@@ -36,5 +36,5 @@ void main()
   // down to the fragment shader
   //////////////////////////////////////////////////////////
 
-
+  vertex.texCoords = gl_MultiTexCoord0;
 }

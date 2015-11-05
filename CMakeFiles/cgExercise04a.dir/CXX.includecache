@@ -6,28 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/homes/jt1712/3rdYear/graphics/cgcoursework2015/inc/lodepng.cpp
-lodepng.h
-/homes/jt1712/3rdYear/graphics/cgcoursework2015/inc/lodepng.h
-stdio.h
--
-stdlib.h
--
-fstream
--
-Windows.h
--
-tchar.h
--
-unistd.h
--
-GL/glew.h
-/homes/jt1712/3rdYear/graphics/cgcoursework2015/inc/GL/glew.h
-GLUT/glut.h
--
-GL/glut.h
--
-
 /homes/jt1712/3rdYear/graphics/cgcoursework2015/inc/lodepng.h
 time.h
 -

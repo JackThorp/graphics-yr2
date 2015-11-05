@@ -1,0 +1,6 @@
+Found a seamless ink-cloth texture online to add on the teapot. The texture
+looks good and is generally seamless apart from the point at which the spout
+joins the body of the teapot. A simple way (perhaps hacky) to improve this 
+would be to manipulate the texture map so that the parts of the textue 
+around the spout join are of uniform colour, light-blue in the case of this
+texture.
